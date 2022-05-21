@@ -88,7 +88,11 @@ viewNameValidation model =
 validatePassword : Model -> (Bool , String)
 validatePassword model =
 -- TODO FIX THIS lul
-  if model.passwordAgain == model.password && String.length model.password > 8 && (String.any isDigit model.password && String.any isLower model.password && String.any isUpper model.password)  then
+  if model.passwordAgain == model.password && 
+    String.length model.password > 8 &&
+    (String.any isDigit model.password &&
+    String.any isLower model.password &&
+    String.any isUpper model.password)  then
     (True , "OK!")
   else
     (False , "Invalid Password")
